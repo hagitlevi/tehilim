@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1f4d5c">
+<title>תהלים קיט · יגאל בן שרה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow reading column; sticky bar with the name's letters as jump chips; one section per letter */
+:root{
+  --bg:#f4f6f5; --paper:#ffffff; --ink:#1c2b33; --muted:#5d6c72; --line:#dfe5e3;
+  --accent:#1f4d5c; --gold:#a8812f; --gold-soft:#f3ead6;
+  --fs:24px;
+  --f-text:"Frank Ruhl Libre","David Libre","Times New Roman",serif;
+  --f-ui:"Heebo","Arial Hebrew",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10181c; --paper:#172227; --ink:#ebe8df; --muted:#9aa8ad; --line:#26353b;
+  --accent:#8fc3cf; --gold:#d8b46a; --gold-soft:#2b2a20; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10181c; --paper:#172227; --ink:#ebe8df; --muted:#9aa8ad; --line:#26353b;
+  --accent:#8fc3cf; --gold:#d8b46a; --gold-soft:#2b2a20; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);direction:rtl;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:640px;margin:0 auto;padding-block:20px 60px}
+.intro{text-align:center;padding-block:12px 18px}
+.intro .eyebrow{font-size:13px;letter-spacing:.08em;color:var(--muted)}
+.intro h1{font-family:var(--f-text);font-weight:700;font-size:40px;margin:6px 0 4px;color:var(--accent);text-wrap:balance}
+.intro p{margin:0;color:var(--muted);font-size:15px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);
+  padding-block:10px;border-bottom:1px solid var(--line);margin-inline:-4px}
+.chips{display:flex;justify-content:center;align-items:center;gap:6px;flex-wrap:nowrap}
+.chip{flex:0 1 40px;min-width:0;height:44px;display:grid;place-items:center;border-radius:10px;
+  font-family:var(--f-text);font-weight:700;font-size:24px;color:var(--accent);text-decoration:none;
+  background:var(--paper);border:1px solid var(--line);transition:background .2s,color .2s}
+.chip.on{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+.chip:focus-visible,.tool button:focus-visible,.next:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.gap{flex:0 0 8px}
+.tools{display:flex;justify-content:center;gap:8px;margin-top:8px}
+.tool{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--paper)}
+.tool button{font-family:var(--f-ui);font-size:15px;border:0;background:none;color:var(--ink);padding:6px 14px;min-height:36px;cursor:pointer}
+.tool button+button{border-right:1px solid var(--line)}
+.tool button[aria-pressed="true"]{background:var(--gold-soft);color:var(--gold);font-weight:700}
+.sec{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 120px);margin-top:28px;background:var(--paper);
+  border:1px solid var(--line);border-radius:16px;padding:20px 18px 14px}
+.sh{display:flex;align-items:center;gap:14px;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.big{width:64px;height:64px;flex:0 0 64px;border-radius:50%;display:grid;place-items:center;
+  font-family:var(--f-text);font-weight:700;font-size:40px;line-height:1;color:var(--gold);background:var(--gold-soft)}
+.sh h2{margin:0;font-family:var(--f-text);font-size:26px;color:var(--accent)}
+.meta{font-size:14px;color:var(--muted);margin-top:2px}
+.pos{margin-right:auto;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;direction:ltr}
+.v{margin:0;padding-block:12px;border-bottom:1px dashed var(--line);font-family:var(--f-text);
+  font-size:var(--fs);line-height:1.85}
+.v:last-child{border-bottom:0}
+.n{display:inline-block;min-width:2.1em;margin-left:.35em;font-family:var(--f-ui);font-weight:700;
+  font-size:.55em;color:var(--gold);vertical-align:.2em}
+.next{display:block;text-align:center;margin-top:10px;padding:12px;border-radius:10px;font-size:16px;
+  color:var(--accent);text-decoration:none;background:var(--bg);font-weight:500}
+.foot{text-align:center;color:var(--muted);font-size:12px;margin-top:28px;line-height:1.6}
+</style>
+</head>
+<body>
+
+<div class="wrap" id="top">
+  <div class="intro">
+    <div class="eyebrow">תהלים פרק קיט · לפי אותיות השם</div>
+    <h1>יגאל בן שרה</h1>
+    <p>תשע אותיות, שמונה פסוקים לכל אות</p>
+  </div>
+
+  <nav class="bar" aria-label="מעבר בין האותיות">
+    <div class="chips"><a class="chip" href="#yod" data-id="yod" aria-label="אות יוֹד">י</a><a class="chip" href="#gimel" data-id="gimel" aria-label="אות גִּימֶל">ג</a><a class="chip" href="#alef" data-id="alef" aria-label="אות אָלֶף">א</a><a class="chip" href="#lamed" data-id="lamed" aria-label="אות לָמֶד">ל</a><span class="gap" aria-hidden="true"></span><a class="chip" href="#bet" data-id="bet" aria-label="אות בֵּית">ב</a><a class="chip" href="#nun" data-id="nun" aria-label="אות נוּן">ן</a><span class="gap" aria-hidden="true"></span><a class="chip" href="#shin" data-id="shin" aria-label="אות שִׁין">ש</a><a class="chip" href="#resh" data-id="resh" aria-label="אות רֵישׁ">ר</a><a class="chip" href="#he" data-id="he" aria-label="אות הֵא">ה</a></div>
+    <div class="tools">
+      <div class="tool" role="group" aria-label="גודל אותיות">
+        <button id="smaller" type="button" aria-label="הקטנת הטקסט">א−</button>
+        <button id="bigger" type="button" aria-label="הגדלת הטקסט">א+</button>
+      </div>
+      <div class="tool" role="group" aria-label="טעמי המקרא">
+        <button id="tNikud" type="button" aria-pressed="true">ניקוד</button>
+        <button id="tTeamim" type="button" aria-pressed="false">עם טעמים</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="sec" id="yod">
+<header class="sh"><span class="big">י</span><div><h2>יוֹד</h2><div class="meta">תהלים קיט · פסוקים עג–פ</div></div><span class="pos">1/9</span></header>
+<div class="verses"><p class="v"><span class="n">עג</span><span class="t" data-p="יָדֶיךָ עָשׂוּנִי וַיְכוֹנְנוּנִי הֲבִינֵנִי וְאֶלְמְדָה מִצְוֺתֶיךָ׃" data-f="יָדֶ֣יךָ עָ֭שׂוּנִי וַֽיְכוֹנְנ֑וּנִי הֲ֝בִינֵ֗נִי וְאֶלְמְדָ֥ה מִצְוֺתֶֽיךָ׃">יָדֶיךָ עָשׂוּנִי וַיְכוֹנְנוּנִי הֲבִינֵנִי וְאֶלְמְדָה מִצְוֺתֶיךָ׃</span></p><p class="v"><span class="n">עד</span><span class="t" data-p="יְרֵאֶיךָ יִרְאוּנִי וְיִשְׂמָחוּ כִּי לִדְבָרְךָ יִחָלְתִּי׃" data-f="יְ֭רֵאֶיךָ יִרְא֣וּנִי וְיִשְׂמָ֑חוּ כִּ֖י לִדְבָרְךָ֣ יִחָֽלְתִּי׃">יְרֵאֶיךָ יִרְאוּנִי וְיִשְׂמָחוּ כִּי לִדְבָרְךָ יִחָלְתִּי׃</span></p><p class="v"><span class="n">עה</span><span class="t" data-p="יָדַעְתִּי יְהֹוָה כִּי־צֶדֶק מִשְׁפָּטֶיךָ וֶאֱמוּנָה עִנִּיתָנִי׃" data-f="יָדַ֣עְתִּי יְ֭הֹוָה כִּי־צֶ֣דֶק מִשְׁפָּטֶ֑יךָ וֶ֝אֱמוּנָ֗ה עִנִּיתָֽנִי׃">יָדַעְתִּי יְהֹוָה כִּי־צֶדֶק מִשְׁפָּטֶיךָ וֶאֱמוּנָה עִנִּיתָנִי׃</span></p><p class="v"><span class="n">עו</span><span class="t" data-p="יְהִי־נָא חַסְדְּךָ לְנַחֲמֵנִי כְּאִמְרָתְךָ לְעַבְדֶּךָ׃" data-f="יְהִי־נָ֣א חַסְדְּךָ֣ לְנַחֲמֵ֑נִי כְּאִמְרָתְךָ֥ לְעַבְדֶּֽךָ׃">יְהִי־נָא חַסְדְּךָ לְנַחֲמֵנִי כְּאִמְרָתְךָ לְעַבְדֶּךָ׃</span></p><p class="v"><span class="n">עז</span><span class="t" data-p="יְבֹאוּנִי רַחֲמֶיךָ וְאֶחְיֶה כִּי־תוֹרָתְךָ שַׁעֲשֻׁעָי׃" data-f="יְבֹא֣וּנִי רַחֲמֶ֣יךָ וְאֶחְיֶ֑ה כִּי־ת֥֝וֹרָתְךָ֗ שַׁעֲשֻׁעָֽי׃">יְבֹאוּנִי רַחֲמֶיךָ וְאֶחְיֶה כִּי־תוֹרָתְךָ שַׁעֲשֻׁעָי׃</span></p><p class="v"><span class="n">עח</span><span class="t" data-p="יֵבֹשׁוּ זֵדִים כִּי־שֶׁקֶר עִוְּתוּנִי אֲנִי אָשִׂיחַ בְּפִקּוּדֶיךָ׃" data-f="יֵבֹ֣שׁוּ זֵ֭דִים כִּי־שֶׁ֣קֶר עִוְּת֑וּנִי אֲ֝נִ֗י אָשִׂ֥יחַ בְּפִקּוּדֶֽיךָ׃">יֵבֹשׁוּ זֵדִים כִּי־שֶׁקֶר עִוְּתוּנִי אֲנִי אָשִׂיחַ בְּפִקּוּדֶיךָ׃</span></p><p class="v"><span class="n">עט</span><span class="t" data-p="יָשׁוּבוּ לִי יְרֵאֶיךָ וְיֹדְעֵי עֵדֹתֶיךָ׃" data-f="יָשׁ֣וּבוּ לִ֣י יְרֵאֶ֑יךָ וְ֝יֹדְעֵ֗י עֵדֹתֶֽיךָ׃">יָשׁוּבוּ לִי יְרֵאֶיךָ וְיֹדְעֵי עֵדֹתֶיךָ׃</span></p><p class="v"><span class="n">פ</span><span class="t" data-p="יְהִי־לִבִּי תָמִים בְּחֻקֶּיךָ לְמַעַן לֹא אֵבוֹשׁ׃" data-f="יְהִי־לִבִּ֣י תָמִ֣ים בְּחֻקֶּ֑יךָ לְ֝מַ֗עַן לֹ֣א אֵבֽוֹשׁ׃">יְהִי־לִבִּי תָמִים בְּחֻקֶּיךָ לְמַעַן לֹא אֵבוֹשׁ׃</span></p></div><a class="next" href="#gimel">לאות הבאה · ג ←</a></section>
+<section class="sec" id="gimel">
+<header class="sh"><span class="big">ג</span><div><h2>גִּימֶל</h2><div class="meta">תהלים קיט · פסוקים יז–כד</div></div><span class="pos">2/9</span></header>
+<div class="verses"><p class="v"><span class="n">יז</span><span class="t" data-p="גְּמֹל עַל־עַבְדְּךָ אֶחְיֶה וְאֶשְׁמְרָה דְבָרֶךָ׃" data-f="גְּמֹ֖ל עַל־עַבְדְּךָ֥ אֶחְיֶ֗ה וְאֶשְׁמְרָ֥ה דְבָרֶֽךָ׃">גְּמֹל עַל־עַבְדְּךָ אֶחְיֶה וְאֶשְׁמְרָה דְבָרֶךָ׃</span></p><p class="v"><span class="n">יח</span><span class="t" data-p="גַּל־עֵינַי וְאַבִּיטָה נִפְלָאוֹת מִתּוֹרָתֶךָ׃" data-f="גַּל־עֵינַ֥י וְאַבִּ֑יטָה נִ֝פְלָא֗וֹת מִתּוֹרָתֶֽךָ׃">גַּל־עֵינַי וְאַבִּיטָה נִפְלָאוֹת מִתּוֹרָתֶךָ׃</span></p><p class="v"><span class="n">יט</span><span class="t" data-p="גֵּר אָנֹכִי בָאָרֶץ אַל־תַּסְתֵּר מִמֶּנִּי מִצְוֺתֶיךָ׃" data-f="גֵּ֣ר אָנֹכִ֣י בָאָ֑רֶץ אַל־תַּסְתֵּ֥ר מִ֝מֶּ֗נִּי מִצְוֺתֶֽיךָ׃">גֵּר אָנֹכִי בָאָרֶץ אַל־תַּסְתֵּר מִמֶּנִּי מִצְוֺתֶיךָ׃</span></p><p class="v"><span class="n">כ</span><span class="t" data-p="גָּרְסָה נַפְשִׁי לְתַאֲבָה אֶל־מִשְׁפָּטֶיךָ בְכָל־עֵת׃" data-f="גָּרְסָ֣ה נַפְשִׁ֣י לְתַאֲבָ֑ה אֶֽל־מִשְׁפָּטֶ֥יךָ בְכָל־עֵֽת׃">גָּרְסָה נַפְשִׁי לְתַאֲבָה אֶל־מִשְׁפָּטֶיךָ בְכָל־עֵת׃</span></p><p class="v"><span class="n">כא</span><span class="t" data-p="גָּעַרְתָּ זֵדִים אֲרוּרִים הַשֹּׁגִים מִמִּצְוֺתֶיךָ׃" data-f="גָּ֭עַרְתָּ זֵדִ֣ים אֲרוּרִ֑ים הַ֝שֹּׁגִ֗ים מִמִּצְוֺתֶֽיךָ׃">גָּעַרְתָּ זֵדִים אֲרוּרִים הַשֹּׁגִים מִמִּצְוֺתֶיךָ׃</span></p><p class="v"><span class="n">כב</span><span class="t" data-p="גַּל מֵעָלַי חֶרְפָּה וָבוּז כִּי עֵדֹתֶיךָ נָצָרְתִּי׃" data-f="גַּ֣ל מֵ֭עָלַי חֶרְפָּ֣ה וָב֑וּז כִּ֖י עֵדֹתֶ֣יךָ נָצָֽרְתִּי׃">גַּל מֵעָלַי חֶרְפָּה וָבוּז כִּי עֵדֹתֶיךָ נָצָרְתִּי׃</span></p><p class="v"><span class="n">כג</span><span class="t" data-p="גַּם יָשְׁבוּ שָׂרִים בִּי נִדְבָּרוּ עַבְדְּךָ יָשִׂיחַ בְּחֻקֶּיךָ׃" data-f="גַּ֤ם יָשְׁב֣וּ שָׂ֭רִים בִּ֣י נִדְבָּ֑רוּ עַ֝בְדְּךָ֗ יָשִׂ֥יחַ בְּחֻקֶּֽיךָ׃">גַּם יָשְׁבוּ שָׂרִים בִּי נִדְבָּרוּ עַבְדְּךָ יָשִׂיחַ בְּחֻקֶּיךָ׃</span></p><p class="v"><span class="n">כד</span><span class="t" data-p="גַּם־עֵדֹתֶיךָ שַׁעֲשֻׁעָי אַנְשֵׁי עֲצָתִי׃" data-f="גַּֽם־עֵ֭דֹתֶיךָ שַׁעֲשֻׁעָ֗י אַנְשֵׁ֥י עֲצָתִֽי׃">גַּם־עֵדֹתֶיךָ שַׁעֲשֻׁעָי אַנְשֵׁי עֲצָתִי׃</span></p></div><a class="next" href="#alef">לאות הבאה · א ←</a></section>
+<section class="sec" id="alef">
+<header class="sh"><span class="big">א</span><div><h2>אָלֶף</h2><div class="meta">תהלים קיט · פסוקים א–ח</div></div><span class="pos">3/9</span></header>
+<div class="verses"><p class="v"><span class="n">א</span><span class="t" data-p="אַשְׁרֵי תְמִימֵי־דָרֶךְ הַהֹלְכִים בְּתוֹרַת יְהֹוָה׃" data-f="אַשְׁרֵ֥י תְמִֽימֵי־דָ֑רֶךְ הַ֝הֹלְכִ֗ים בְּתוֹרַ֥ת יְהֹוָֽה׃">אַשְׁרֵי תְמִימֵי־דָרֶךְ הַהֹלְכִים בְּתוֹרַת יְהֹוָה׃</span></p><p class="v"><span class="n">ב</span><span class="t" data-p="אַשְׁרֵי נֹצְרֵי עֵדֹתָיו בְּכָל־לֵב יִדְרְשׁוּהוּ׃" data-f="אַ֭שְׁרֵי נֹצְרֵ֥י עֵדֹתָ֗יו בְּכָל־לֵ֥ב יִדְרְשֽׁוּהוּ׃">אַשְׁרֵי נֹצְרֵי עֵדֹתָיו בְּכָל־לֵב יִדְרְשׁוּהוּ׃</span></p><p class="v"><span class="n">ג</span><span class="t" data-p="אַף לֹא־פָעֲלוּ עַוְלָה בִּדְרָכָיו הָלָכוּ׃" data-f="אַ֭ף לֹא־פָעֲל֣וּ עַוְלָ֑ה בִּדְרָכָ֥יו הָלָֽכוּ׃">אַף לֹא־פָעֲלוּ עַוְלָה בִּדְרָכָיו הָלָכוּ׃</span></p><p class="v"><span class="n">ד</span><span class="t" data-p="אַתָּה צִוִּיתָה פִקֻּדֶיךָ לִשְׁמֹר מְאֹד׃" data-f="אַ֭תָּה צִוִּ֥יתָה פִקֻּדֶ֗יךָ לִשְׁמֹ֥ר מְאֹֽד׃">אַתָּה צִוִּיתָה פִקֻּדֶיךָ לִשְׁמֹר מְאֹד׃</span></p><p class="v"><span class="n">ה</span><span class="t" data-p="אַחֲלַי יִכֹּנוּ דְרָכָי לִשְׁמֹר חֻקֶּיךָ׃" data-f="אַ֭חֲלַי יִכֹּ֥נוּ דְרָכָ֗י לִשְׁמֹ֥ר חֻקֶּֽיךָ׃">אַחֲלַי יִכֹּנוּ דְרָכָי לִשְׁמֹר חֻקֶּיךָ׃</span></p><p class="v"><span class="n">ו</span><span class="t" data-p="אָז לֹא־אֵבוֹשׁ בְּהַבִּיטִי אֶל־כָּל־מִצְוֺתֶיךָ׃" data-f="אָ֥ז לֹא־אֵב֑וֹשׁ בְּ֝הַבִּיטִ֗י אֶל־כָּל־מִצְוֺתֶֽיךָ׃">אָז לֹא־אֵבוֹשׁ בְּהַבִּיטִי אֶל־כָּל־מִצְוֺתֶיךָ׃</span></p><p class="v"><span class="n">ז</span><span class="t" data-p="אוֹדְךָ בְּיֹשֶׁר לֵבָב בְּלָמְדִי מִשְׁפְּטֵי צִדְקֶךָ׃" data-f="א֭וֹדְךָ בְּיֹ֣שֶׁר לֵבָ֑ב בְּ֝לָמְדִ֗י מִשְׁפְּטֵ֥י צִדְקֶֽךָ׃">אוֹדְךָ בְּיֹשֶׁר לֵבָב בְּלָמְדִי מִשְׁפְּטֵי צִדְקֶךָ׃</span></p><p class="v"><span class="n">ח</span><span class="t" data-p="אֶת־חֻקֶּיךָ אֶשְׁמֹר אַל־תַּעַזְבֵנִי עַד־מְאֹד׃" data-f="אֶת־חֻקֶּ֥יךָ אֶשְׁמֹ֑ר אַֽל־תַּעַזְבֵ֥נִי עַד־מְאֹֽד׃">אֶת־חֻקֶּיךָ אֶשְׁמֹר אַל־תַּעַזְבֵנִי עַד־מְאֹד׃</span></p></div><a class="next" href="#lamed">לאות הבאה · ל ←</a></section>
+<section class="sec" id="lamed">
+<header class="sh"><span class="big">ל</span><div><h2>לָמֶד</h2><div class="meta">תהלים קיט · פסוקים פט–צו</div></div><span class="pos">4/9</span></header>
+<div class="verses"><p class="v"><span class="n">פט</span><span class="t" data-p="לְעוֹלָם יְהֹוָה דְּבָרְךָ נִצָּב בַּשָּׁמָיִם׃" data-f="לְעוֹלָ֥ם יְהֹוָ֑ה דְּ֝בָרְךָ֗ נִצָּ֥ב בַּשָּׁמָֽיִם׃">לְעוֹלָם יְהֹוָה דְּבָרְךָ נִצָּב בַּשָּׁמָיִם׃</span></p><p class="v"><span class="n">צ</span><span class="t" data-p="לְדֹר וָדֹר אֱמוּנָתֶךָ כּוֹנַנְתָּ אֶרֶץ וַתַּעֲמֹד׃" data-f="לְדֹ֣ר וָ֭דֹר אֱמוּנָתֶ֑ךָ כּוֹנַ֥נְתָּֽ אֶ֝֗רֶץ וַֽתַּעֲמֹֽד׃">לְדֹר וָדֹר אֱמוּנָתֶךָ כּוֹנַנְתָּ אֶרֶץ וַתַּעֲמֹד׃</span></p><p class="v"><span class="n">צא</span><span class="t" data-p="לְמִשְׁפָּטֶיךָ עָמְדוּ הַיּוֹם כִּי הַכֹּל עֲבָדֶיךָ׃" data-f="לְֽ֭מִשְׁפָּטֶיךָ עָמְד֣וּ הַיּ֑וֹם כִּ֖י הַכֹּ֣ל עֲבָדֶֽיךָ׃">לְמִשְׁפָּטֶיךָ עָמְדוּ הַיּוֹם כִּי הַכֹּל עֲבָדֶיךָ׃</span></p><p class="v"><span class="n">צב</span><span class="t" data-p="לוּלֵי תוֹרָתְךָ שַׁעֲשֻׁעָי אָז אָבַדְתִּי בְעָנְיִי׃" data-f="לוּלֵ֣י ת֭וֹרָתְךָ שַׁעֲשֻׁעָ֑י אָ֝֗ז אָבַ֥דְתִּי בְעָנְיִֽי׃">לוּלֵי תוֹרָתְךָ שַׁעֲשֻׁעָי אָז אָבַדְתִּי בְעָנְיִי׃</span></p><p class="v"><span class="n">צג</span><span class="t" data-p="לְעוֹלָם לֹא־אֶשְׁכַּח פִּקּוּדֶיךָ כִּי בָם חִיִּיתָנִי׃" data-f="לְ֭עוֹלָם לֹא־אֶשְׁכַּ֣ח פִּקּוּדֶ֑יךָ כִּ֥י בָ֝֗ם חִיִּיתָֽנִי׃">לְעוֹלָם לֹא־אֶשְׁכַּח פִּקּוּדֶיךָ כִּי בָם חִיִּיתָנִי׃</span></p><p class="v"><span class="n">צד</span><span class="t" data-p="לְךָ־אֲנִי הוֹשִׁיעֵנִי כִּי פִקּוּדֶיךָ דָרָשְׁתִּי׃" data-f="לְֽךָ־אֲ֭נִי הוֹשִׁיעֵ֑נִי כִּ֖י פִקּוּדֶ֣יךָ דָרָֽשְׁתִּי׃">לְךָ־אֲנִי הוֹשִׁיעֵנִי כִּי פִקּוּדֶיךָ דָרָשְׁתִּי׃</span></p><p class="v"><span class="n">צה</span><span class="t" data-p="לִי קִוּוּ רְשָׁעִים לְאַבְּדֵנִי עֵדֹתֶיךָ אֶתְבּוֹנָן׃" data-f="לִ֤י קִוּ֣וּ רְשָׁעִ֣ים לְאַבְּדֵ֑נִי עֵ֝דֹתֶ֗יךָ אֶתְבּוֹנָֽן׃">לִי קִוּוּ רְשָׁעִים לְאַבְּדֵנִי עֵדֹתֶיךָ אֶתְבּוֹנָן׃</span></p><p class="v"><span class="n">צו</span><span class="t" data-p="לְכָל־תִּכְלָה רָאִיתִי קֵץ רְחָבָה מִצְוָתְךָ מְאֹד׃" data-f="לְֽכָל־תִּ֭כְלָה רָאִ֣יתִי קֵ֑ץ רְחָבָ֖ה מִצְוָתְךָ֣ מְאֹֽד׃">לְכָל־תִּכְלָה רָאִיתִי קֵץ רְחָבָה מִצְוָתְךָ מְאֹד׃</span></p></div><a class="next" href="#bet">לאות הבאה · ב ←</a></section>
+<section class="sec" id="bet">
+<header class="sh"><span class="big">ב</span><div><h2>בֵּית</h2><div class="meta">תהלים קיט · פסוקים ט–טז</div></div><span class="pos">5/9</span></header>
+<div class="verses"><p class="v"><span class="n">ט</span><span class="t" data-p="בַּמֶּה יְזַכֶּה־נַּעַר אֶת־אָרְחוֹ לִשְׁמֹר כִּדְבָרֶךָ׃" data-f="בַּמֶּ֣ה יְזַכֶּה־נַּ֭עַר אֶת־אָרְח֑וֹ לִ֝שְׁמֹ֗ר כִּדְבָרֶֽךָ׃">בַּמֶּה יְזַכֶּה־נַּעַר אֶת־אָרְחוֹ לִשְׁמֹר כִּדְבָרֶךָ׃</span></p><p class="v"><span class="n">י</span><span class="t" data-p="בְּכָל־לִבִּי דְרַשְׁתִּיךָ אַל־תַּשְׁגֵּנִי מִמִּצְוֺתֶיךָ׃" data-f="בְּכָל־לִבִּ֥י דְרַשְׁתִּ֑יךָ אַל־תַּ֝שְׁגֵּ֗נִי מִמִּצְוֺתֶֽיךָ׃">בְּכָל־לִבִּי דְרַשְׁתִּיךָ אַל־תַּשְׁגֵּנִי מִמִּצְוֺתֶיךָ׃</span></p><p class="v"><span class="n">יא</span><span class="t" data-p="בְּלִבִּי צָפַנְתִּי אִמְרָתֶךָ לְמַעַן לֹא אֶחֱטָא־לָךְ׃" data-f="בְּ֭לִבִּי צָפַ֣נְתִּי אִמְרָתֶ֑ךָ לְ֝מַ֗עַן לֹ֣א אֶחֱטָא־לָֽךְ׃">בְּלִבִּי צָפַנְתִּי אִמְרָתֶךָ לְמַעַן לֹא אֶחֱטָא־לָךְ׃</span></p><p class="v"><span class="n">יב</span><span class="t" data-p="בָּרוּךְ אַתָּה יְהֹוָה לַמְּדֵנִי חֻקֶּיךָ׃" data-f="בָּר֖וּךְ אַתָּ֥ה יְהֹוָ֗ה לַמְּדֵ֥נִי חֻקֶּֽיךָ׃">בָּרוּךְ אַתָּה יְהֹוָה לַמְּדֵנִי חֻקֶּיךָ׃</span></p><p class="v"><span class="n">יג</span><span class="t" data-p="בִּשְׂפָתַי סִפַּרְתִּי כֹּל מִשְׁפְּטֵי־פִיךָ׃" data-f="בִּשְׂפָתַ֥י סִפַּ֑רְתִּי כֹּ֝֗ל מִשְׁפְּטֵי־פִֽיךָ׃">בִּשְׂפָתַי סִפַּרְתִּי כֹּל מִשְׁפְּטֵי־פִיךָ׃</span></p><p class="v"><span class="n">יד</span><span class="t" data-p="בְּדֶרֶךְ עֵדְוֺתֶיךָ שַּׂשְׂתִּי כְּעַל כָּל־הוֹן׃" data-f="בְּדֶ֖רֶךְ עֵדְוֺתֶ֥יךָ שַּׂ֗שְׂתִּי כְּעַ֣ל כָּל־הֽוֹן׃">בְּדֶרֶךְ עֵדְוֺתֶיךָ שַּׂשְׂתִּי כְּעַל כָּל־הוֹן׃</span></p><p class="v"><span class="n">טו</span><span class="t" data-p="בְּפִקּוּדֶיךָ אָשִׂיחָה וְאַבִּיטָה אֹרְחֹתֶיךָ׃" data-f="בְּפִקּוּדֶ֥יךָ אָשִׂ֑יחָה וְ֝אַבִּ֗יטָה אֹֽרְחֹתֶֽיךָ׃">בְּפִקּוּדֶיךָ אָשִׂיחָה וְאַבִּיטָה אֹרְחֹתֶיךָ׃</span></p><p class="v"><span class="n">טז</span><span class="t" data-p="בְּחֻקֹּתֶיךָ אֶשְׁתַּעֲשָׁע לֹא אֶשְׁכַּח דְּבָרֶךָ׃" data-f="בְּחֻקֹּתֶ֥יךָ אֶֽשְׁתַּעֲשָׁ֑ע לֹ֖א אֶשְׁכַּ֣ח דְּבָרֶֽךָ׃">בְּחֻקֹּתֶיךָ אֶשְׁתַּעֲשָׁע לֹא אֶשְׁכַּח דְּבָרֶךָ׃</span></p></div><a class="next" href="#nun">לאות הבאה · נ ←</a></section>
+<section class="sec" id="nun">
+<header class="sh"><span class="big">נ</span><div><h2>נוּן</h2><div class="meta">תהלים קיט · פסוקים קה–קיב</div></div><span class="pos">6/9</span></header>
+<div class="verses"><p class="v"><span class="n">קה</span><span class="t" data-p="נֵר־לְרַגְלִי דְבָרֶךָ וְאוֹר לִנְתִיבָתִי׃" data-f="נֵר־לְרַגְלִ֥י דְבָרֶ֑ךָ וְ֝א֗וֹר לִנְתִיבָתִֽי׃">נֵר־לְרַגְלִי דְבָרֶךָ וְאוֹר לִנְתִיבָתִי׃</span></p><p class="v"><span class="n">קו</span><span class="t" data-p="נִשְׁבַּעְתִּי וָאֲקַיֵּמָה לִשְׁמֹר מִשְׁפְּטֵי צִדְקֶךָ׃" data-f="נִשְׁבַּ֥עְתִּי וָאֲקַיֵּ֑מָה לִ֝שְׁמֹ֗ר מִשְׁפְּטֵ֥י צִדְקֶֽךָ׃">נִשְׁבַּעְתִּי וָאֲקַיֵּמָה לִשְׁמֹר מִשְׁפְּטֵי צִדְקֶךָ׃</span></p><p class="v"><span class="n">קז</span><span class="t" data-p="נַעֲנֵיתִי עַד־מְאֹד יְהֹוָה חַיֵּנִי כִדְבָרֶךָ׃" data-f="נַעֲנֵ֥יתִי עַד־מְאֹ֑ד יְ֝הֹוָ֗ה חַיֵּ֥נִי כִדְבָרֶֽךָ׃">נַעֲנֵיתִי עַד־מְאֹד יְהֹוָה חַיֵּנִי כִדְבָרֶךָ׃</span></p><p class="v"><span class="n">קח</span><span class="t" data-p="נִדְבוֹת פִּי רְצֵה־נָא יְהֹוָה וּמִשְׁפָּטֶיךָ לַמְּדֵנִי׃" data-f="נִדְב֣וֹת פִּ֭י רְצֵה־נָ֣א יְהֹוָ֑ה וּֽמִשְׁפָּטֶ֥יךָ לַמְּדֵֽנִי׃">נִדְבוֹת פִּי רְצֵה־נָא יְהֹוָה וּמִשְׁפָּטֶיךָ לַמְּדֵנִי׃</span></p><p class="v"><span class="n">קט</span><span class="t" data-p="נַפְשִׁי בְכַפִּי תָמִיד וְתוֹרָתְךָ לֹא שָׁכָחְתִּי׃" data-f="נַפְשִׁ֣י בְכַפִּ֣י תָמִ֑יד וְ֝ת֥וֹרָתְךָ֗ לֹ֣א שָׁכָֽחְתִּי׃">נַפְשִׁי בְכַפִּי תָמִיד וְתוֹרָתְךָ לֹא שָׁכָחְתִּי׃</span></p><p class="v"><span class="n">קי</span><span class="t" data-p="נָתְנוּ רְשָׁעִים פַּח לִי וּמִפִּקּוּדֶיךָ לֹא תָעִיתִי׃" data-f="נָתְנ֬וּ רְשָׁעִ֣ים פַּ֣ח לִ֑י וּ֝מִפִּקּוּדֶ֗יךָ לֹ֣א תָעִֽיתִי׃">נָתְנוּ רְשָׁעִים פַּח לִי וּמִפִּקּוּדֶיךָ לֹא תָעִיתִי׃</span></p><p class="v"><span class="n">קיא</span><span class="t" data-p="נָחַלְתִּי עֵדְוֺתֶיךָ לְעוֹלָם כִּי־שְׂשׂוֹן לִבִּי הֵמָּה׃" data-f="נָחַ֣לְתִּי עֵדְוֺתֶ֣יךָ לְעוֹלָ֑ם כִּֽי־שְׂשׂ֖וֹן לִבִּ֣י הֵֽמָּה׃">נָחַלְתִּי עֵדְוֺתֶיךָ לְעוֹלָם כִּי־שְׂשׂוֹן לִבִּי הֵמָּה׃</span></p><p class="v"><span class="n">קיב</span><span class="t" data-p="נָטִיתִי לִבִּי לַעֲשׂוֹת חֻקֶּיךָ לְעוֹלָם עֵקֶב׃" data-f="נָטִ֣יתִי לִ֭בִּי לַעֲשׂ֥וֹת חֻקֶּ֗יךָ לְעוֹלָ֥ם עֵֽקֶב׃">נָטִיתִי לִבִּי לַעֲשׂוֹת חֻקֶּיךָ לְעוֹלָם עֵקֶב׃</span></p></div><a class="next" href="#shin">לאות הבאה · ש ←</a></section>
+<section class="sec" id="shin">
+<header class="sh"><span class="big">ש</span><div><h2>שִׁין</h2><div class="meta">תהלים קיט · פסוקים קסא–קסח</div></div><span class="pos">7/9</span></header>
+<div class="verses"><p class="v"><span class="n">קסא</span><span class="t" data-p="שָׂרִים רְדָפוּנִי חִנָּם וּמִדְּבָרְךָ פָּחַד לִבִּי׃" data-f="שָׂ֭רִים רְדָפ֣וּנִי חִנָּ֑ם וּ֝מִדְּבָרְךָ֗ פָּחַ֥ד לִבִּֽי׃">שָׂרִים רְדָפוּנִי חִנָּם וּמִדְּבָרְךָ פָּחַד לִבִּי׃</span></p><p class="v"><span class="n">קסב</span><span class="t" data-p="שָׂשׂ אָנֹכִי עַל־אִמְרָתֶךָ כְּמוֹצֵא שָׁלָל רָב׃" data-f="שָׂ֣שׂ אָ֭נֹכִי עַל־אִמְרָתֶ֑ךָ כְּ֝מוֹצֵ֗א שָׁלָ֥ל רָֽב׃">שָׂשׂ אָנֹכִי עַל־אִמְרָתֶךָ כְּמוֹצֵא שָׁלָל רָב׃</span></p><p class="v"><span class="n">קסג</span><span class="t" data-p="שֶׁקֶר שָׂנֵאתִי וַאֲתַעֵבָה תּוֹרָתְךָ אָהָבְתִּי׃" data-f="שֶׁ֣קֶר שָׂ֭נֵאתִי וַאֲתַעֵ֑בָה תּוֹרָתְךָ֥ אָהָֽבְתִּי׃">שֶׁקֶר שָׂנֵאתִי וַאֲתַעֵבָה תּוֹרָתְךָ אָהָבְתִּי׃</span></p><p class="v"><span class="n">קסד</span><span class="t" data-p="שֶׁבַע בַּיּוֹם הִלַּלְתִּיךָ עַל מִשְׁפְּטֵי צִדְקֶךָ׃" data-f="שֶׁ֣בַע בַּ֭יּוֹם הִלַּלְתִּ֑יךָ עַ֝֗ל מִשְׁפְּטֵ֥י צִדְקֶֽךָ׃">שֶׁבַע בַּיּוֹם הִלַּלְתִּיךָ עַל מִשְׁפְּטֵי צִדְקֶךָ׃</span></p><p class="v"><span class="n">קסה</span><span class="t" data-p="שָׁלוֹם רָב לְאֹהֲבֵי תוֹרָתֶךָ וְאֵין־לָמוֹ מִכְשׁוֹל׃" data-f="שָׁל֣וֹם רָ֭ב לְאֹהֲבֵ֣י תוֹרָתֶ֑ךָ וְאֵֽין־לָ֥מוֹ מִכְשֽׁוֹל׃">שָׁלוֹם רָב לְאֹהֲבֵי תוֹרָתֶךָ וְאֵין־לָמוֹ מִכְשׁוֹל׃</span></p><p class="v"><span class="n">קסו</span><span class="t" data-p="שִׂבַּרְתִּי לִישׁוּעָתְךָ יְהֹוָה וּמִצְוֺתֶיךָ עָשִׂיתִי׃" data-f="שִׂבַּ֣רְתִּי לִישׁוּעָתְךָ֣ יְהֹוָ֑ה וּֽמִצְוֺתֶ֥יךָ עָשִֽׂיתִי׃">שִׂבַּרְתִּי לִישׁוּעָתְךָ יְהֹוָה וּמִצְוֺתֶיךָ עָשִׂיתִי׃</span></p><p class="v"><span class="n">קסז</span><span class="t" data-p="שָׁמְרָה נַפְשִׁי עֵדֹתֶיךָ וָאֹהֲבֵם מְאֹד׃" data-f="שָֽׁמְרָ֣ה נַ֭פְשִׁי עֵדֹתֶ֑יךָ וָאֹהֲבֵ֥ם מְאֹֽד׃">שָׁמְרָה נַפְשִׁי עֵדֹתֶיךָ וָאֹהֲבֵם מְאֹד׃</span></p><p class="v"><span class="n">קסח</span><span class="t" data-p="שָׁמַרְתִּי פִקּוּדֶיךָ וְעֵדֹתֶיךָ כִּי כָל־דְּרָכַי נֶגְדֶּךָ׃" data-f="שָׁמַ֣רְתִּי פִ֭קּוּדֶיךָ וְעֵדֹתֶ֑יךָ כִּ֖י כָל־דְּרָכַ֣י נֶגְדֶּֽךָ׃">שָׁמַרְתִּי פִקּוּדֶיךָ וְעֵדֹתֶיךָ כִּי כָל־דְּרָכַי נֶגְדֶּךָ׃</span></p></div><a class="next" href="#resh">לאות הבאה · ר ←</a></section>
+<section class="sec" id="resh">
+<header class="sh"><span class="big">ר</span><div><h2>רֵישׁ</h2><div class="meta">תהלים קיט · פסוקים קנג–קס</div></div><span class="pos">8/9</span></header>
+<div class="verses"><p class="v"><span class="n">קנג</span><span class="t" data-p="רְאֵה־עָנְיִי וְחַלְּצֵנִי כִּי־תוֹרָתְךָ לֹא שָׁכָחְתִּי׃" data-f="רְאֵה־עָנְיִ֥י וְחַלְּצֵ֑נִי כִּי־ת֥֝וֹרָתְךָ֗ לֹ֣א שָׁכָֽחְתִּי׃">רְאֵה־עָנְיִי וְחַלְּצֵנִי כִּי־תוֹרָתְךָ לֹא שָׁכָחְתִּי׃</span></p><p class="v"><span class="n">קנד</span><span class="t" data-p="רִיבָה רִיבִי וּגְאָלֵנִי לְאִמְרָתְךָ חַיֵּנִי׃" data-f="רִיבָ֣ה רִ֭יבִי וּגְאָלֵ֑נִי לְאִמְרָתְךָ֥ חַיֵּֽנִי׃">רִיבָה רִיבִי וּגְאָלֵנִי לְאִמְרָתְךָ חַיֵּנִי׃</span></p><p class="v"><span class="n">קנה</span><span class="t" data-p="רָחוֹק מֵרְשָׁעִים יְשׁוּעָה כִּי־חֻקֶּיךָ לֹא דָרָשׁוּ׃" data-f="רָח֣וֹק מֵרְשָׁעִ֣ים יְשׁוּעָ֑ה כִּי־חֻ֝קֶּ֗יךָ לֹ֣א דָרָֽשׁוּ׃">רָחוֹק מֵרְשָׁעִים יְשׁוּעָה כִּי־חֻקֶּיךָ לֹא דָרָשׁוּ׃</span></p><p class="v"><span class="n">קנו</span><span class="t" data-p="רַחֲמֶיךָ רַבִּים יְהֹוָה כְּמִשְׁפָּטֶיךָ חַיֵּנִי׃" data-f="רַחֲמֶ֖יךָ רַבִּ֥ים יְהֹוָ֑ה כְּֽמִשְׁפָּטֶ֥יךָ חַיֵּֽנִי׃">רַחֲמֶיךָ רַבִּים יְהֹוָה כְּמִשְׁפָּטֶיךָ חַיֵּנִי׃</span></p><p class="v"><span class="n">קנז</span><span class="t" data-p="רַבִּים רֹדְפַי וְצָרָי מֵעֵדְוֺתֶיךָ לֹא נָטִיתִי׃" data-f="רַ֭בִּים רֹדְפַ֣י וְצָרָ֑י מֵ֝עֵדְוֺתֶ֗יךָ לֹ֣א נָטִֽיתִי׃">רַבִּים רֹדְפַי וְצָרָי מֵעֵדְוֺתֶיךָ לֹא נָטִיתִי׃</span></p><p class="v"><span class="n">קנח</span><span class="t" data-p="רָאִיתִי בֹגְדִים וָאֶתְקוֹטָטָה אֲשֶׁר אִמְרָתְךָ לֹא שָׁמָרוּ׃" data-f="רָאִ֣יתִי בֹ֭גְדִים וָאֶתְקוֹטָ֑טָה אֲשֶׁ֥ר אִ֝מְרָתְךָ֗ לֹ֣א שָׁמָֽרוּ׃">רָאִיתִי בֹגְדִים וָאֶתְקוֹטָטָה אֲשֶׁר אִמְרָתְךָ לֹא שָׁמָרוּ׃</span></p><p class="v"><span class="n">קנט</span><span class="t" data-p="רְאֵה כִּי־פִקּוּדֶיךָ אָהָבְתִּי יְהֹוָה כְּחַסְדְּךָ חַיֵּנִי׃" data-f="רְ֭אֵה כִּי־פִקּוּדֶ֣יךָ אָהָ֑בְתִּי יְ֝הֹוָ֗ה כְּֽחַסְדְּךָ֥ חַיֵּֽנִי׃">רְאֵה כִּי־פִקּוּדֶיךָ אָהָבְתִּי יְהֹוָה כְּחַסְדְּךָ חַיֵּנִי׃</span></p><p class="v"><span class="n">קס</span><span class="t" data-p="רֹאשׁ־דְּבָרְךָ אֱמֶת וּלְעוֹלָם כָּל־מִשְׁפַּט צִדְקֶךָ׃" data-f="רֹאשׁ־דְּבָרְךָ֥ אֱמֶ֑ת וּ֝לְעוֹלָ֗ם כָּל־מִשְׁפַּ֥ט צִדְקֶֽךָ׃">רֹאשׁ־דְּבָרְךָ אֱמֶת וּלְעוֹלָם כָּל־מִשְׁפַּט צִדְקֶךָ׃</span></p></div><a class="next" href="#he">לאות הבאה · ה ←</a></section>
+<section class="sec" id="he">
+<header class="sh"><span class="big">ה</span><div><h2>הֵא</h2><div class="meta">תהלים קיט · פסוקים לג–מ</div></div><span class="pos">9/9</span></header>
+<div class="verses"><p class="v"><span class="n">לג</span><span class="t" data-p="הוֹרֵנִי יְהֹוָה דֶּרֶךְ חֻקֶּיךָ וְאֶצְּרֶנָּה עֵקֶב׃" data-f="הוֹרֵ֣נִי יְ֭הֹוָה דֶּ֥רֶךְ חֻקֶּ֗יךָ וְאֶצְּרֶ֥נָּה עֵֽקֶב׃">הוֹרֵנִי יְהֹוָה דֶּרֶךְ חֻקֶּיךָ וְאֶצְּרֶנָּה עֵקֶב׃</span></p><p class="v"><span class="n">לד</span><span class="t" data-p="הֲבִינֵנִי וְאֶצְּרָה תוֹרָתֶךָ וְאֶשְׁמְרֶנָּה בְכָל־לֵב׃" data-f="הֲ֭בִינֵנִי וְאֶצְּרָ֥ה תוֹרָתֶ֗ךָ וְאֶשְׁמְרֶ֥נָּה בְכָל־לֵֽב׃">הֲבִינֵנִי וְאֶצְּרָה תוֹרָתֶךָ וְאֶשְׁמְרֶנָּה בְכָל־לֵב׃</span></p><p class="v"><span class="n">לה</span><span class="t" data-p="הַדְרִיכֵנִי בִּנְתִיב מִצְוֺתֶיךָ כִּי־בוֹ חָפָצְתִּי׃" data-f="הַ֭דְרִיכֵנִי בִּנְתִ֣יב מִצְוֺתֶ֑יךָ כִּי־ב֥וֹ חָפָֽצְתִּי׃">הַדְרִיכֵנִי בִּנְתִיב מִצְוֺתֶיךָ כִּי־בוֹ חָפָצְתִּי׃</span></p><p class="v"><span class="n">לו</span><span class="t" data-p="הַט־לִבִּי אֶל־עֵדְוֺתֶיךָ וְאַל אֶל־בָּצַע׃" data-f="הַט־לִ֭בִּי אֶל־עֵדְוֺתֶ֗יךָ וְאַ֣ל אֶל־בָּֽצַע׃">הַט־לִבִּי אֶל־עֵדְוֺתֶיךָ וְאַל אֶל־בָּצַע׃</span></p><p class="v"><span class="n">לז</span><span class="t" data-p="הַעֲבֵר עֵינַי מֵרְאוֹת שָׁוְא בִּדְרָכֶךָ חַיֵּנִי׃" data-f="הַעֲבֵ֣ר עֵ֭ינַי מֵרְא֣וֹת שָׁ֑וְא בִּדְרָכֶ֥ךָ חַיֵּֽנִי׃">הַעֲבֵר עֵינַי מֵרְאוֹת שָׁוְא בִּדְרָכֶךָ חַיֵּנִי׃</span></p><p class="v"><span class="n">לח</span><span class="t" data-p="הָקֵם לְעַבְדְּךָ אִמְרָתֶךָ אֲשֶׁר לְיִרְאָתֶךָ׃" data-f="הָקֵ֣ם לְ֭עַבְדְּךָ אִמְרָתֶ֑ךָ אֲ֝שֶׁ֗ר לְיִרְאָתֶֽךָ׃">הָקֵם לְעַבְדְּךָ אִמְרָתֶךָ אֲשֶׁר לְיִרְאָתֶךָ׃</span></p><p class="v"><span class="n">לט</span><span class="t" data-p="הַעֲבֵר חֶרְפָּתִי אֲשֶׁר יָגֹרְתִּי כִּי מִשְׁפָּטֶיךָ טוֹבִים׃" data-f="הַעֲבֵ֣ר חֶ֭רְפָּתִי אֲשֶׁ֣ר יָגֹ֑רְתִּי כִּ֖י מִשְׁפָּטֶ֣יךָ טוֹבִֽים׃">הַעֲבֵר חֶרְפָּתִי אֲשֶׁר יָגֹרְתִּי כִּי מִשְׁפָּטֶיךָ טוֹבִים׃</span></p><p class="v"><span class="n">מ</span><span class="t" data-p="הִנֵּה תָּאַבְתִּי לְפִקֻּדֶיךָ בְּצִדְקָתְךָ חַיֵּנִי׃" data-f="הִ֭נֵּה תָּאַ֣בְתִּי לְפִקֻּדֶ֑יךָ בְּצִדְקָתְךָ֥ חַיֵּֽנִי׃">הִנֵּה תָּאַבְתִּי לְפִקֻּדֶיךָ בְּצִדְקָתְךָ חַיֵּנִי׃</span></p></div><a class="next" href="#top">סיום · חזרה להתחלה ↑</a></section>
+
+
+  <div class="foot">נוסח: מקרא על פי המסורה (ספריא). בפסוק עט ובפסוק קסא מופיע הקרי.</div>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, KEY='tehilim-fs', KEY2='tehilim-teamim';
+  var size=24;
+  try{var s=parseInt(localStorage.getItem(KEY),10); if(s>=16&&s<=44) size=s;}catch(e){}
+  function apply(){root.style.setProperty('--fs',size+'px');try{localStorage.setItem(KEY,size)}catch(e){}}
+  apply();
+  document.getElementById('smaller').onclick=function(){size=Math.max(16,size-2);apply()};
+  document.getElementById('bigger').onclick=function(){size=Math.min(44,size+2);apply()};
+
+  var bN=document.getElementById('tNikud'), bT=document.getElementById('tTeamim');
+  function mode(full){
+    document.querySelectorAll('.t').forEach(function(el){el.textContent=full?el.dataset.f:el.dataset.p});
+    bN.setAttribute('aria-pressed',!full); bT.setAttribute('aria-pressed',full);
+    try{localStorage.setItem(KEY2,full?'1':'0')}catch(e){}
+  }
+  var full=false; try{full=localStorage.getItem(KEY2)==='1'}catch(e){}
+  if(full) mode(true);
+  bN.onclick=function(){mode(false)}; bT.onclick=function(){mode(true)};
+
+  var chips={}; document.querySelectorAll('.chip').forEach(function(c){chips[c.dataset.id]=c});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){
+        for(var k in chips) chips[k].classList.toggle('on',k===e.target.id);
+      }});
+    },{rootMargin:'-40% 0px -55% 0px'});
+    document.querySelectorAll('.sec').forEach(function(s){io.observe(s)});
+  }
+  // keep the screen awake while reading, where allowed
+  function wake(){ try{ navigator.wakeLock && navigator.wakeLock.request('screen').catch(function(){}) }catch(e){} }
+  wake(); document.addEventListener('visibilitychange',function(){ if(!document.hidden) wake() });
+})();
+</script>
+
+</body>
+</html>
